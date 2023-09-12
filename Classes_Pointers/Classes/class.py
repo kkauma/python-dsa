@@ -13,3 +13,8 @@ cookie_two = Cookie('blue')
 
 print(f"Cookie one is {cookie_one.get_color()}")
 print(f"Cookie two is {cookie_two.get_color()}")
+
+cookie_one.set_color("magenta")
+
+print(f"Cookie one is {cookie_one.get_color()}")
+print(f"Cookie two is {cookie_two.get_color()}")
