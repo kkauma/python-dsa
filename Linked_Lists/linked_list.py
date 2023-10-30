@@ -81,6 +81,20 @@ class LinkedList:
             return True
         return False
 
+    def insert(self, index, value):
+        if index < 0 or index >= self.length:
+            return None
+        if index == 0:
+            return self.prepend(value)
+        if index == self.length:
+            return self.append(value)
+        new_node = Node(value)
+        temp = self.get(index - 1)
+        new_node.next = temp.next
+        temp.next = new_node
+        self.length += 1
+        return True
+
 
 my_linked_list = LinkedList(7)
 my_linked_list.append(4)
@@ -90,5 +104,5 @@ my_linked_list.append(7)
 
 my_linked_list.print_list()
 
-my_linked_list.set_value(4, 99)
+my_linked_list.insert(3, 99)
 my_linked_list.print_list()
